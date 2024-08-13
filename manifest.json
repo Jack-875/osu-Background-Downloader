@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "osu BG Downloader",
+  "version": "1.0",
+  "description": "Downloads osu backgrounds from beatmap page.",
+  "permissions": ["downloads", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "default_title": "Download Background"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://osu.ppy.sh/beatmapsets/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
